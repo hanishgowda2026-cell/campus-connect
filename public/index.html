@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Connect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="/">Campus<span>Connect</span></a>
+    <input id="searchInput" type="search" placeholder="Search posts...">
+    <div class="profile">S</div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>YOUR CAMPUS</h3>
+      <a class="active" href="#feed">🏠 Home Feed</a>
+      <a href="#create">✍️ Create Post</a>
+      <a href="#events">📅 Campus Events</a>
+      <div class="sidebar-note">
+        <h3>STUDENT COMMUNITY</h3>
+        <p>Share ideas, discover events and connect with your campus.</p>
+      </div>
+    </aside>
+
+    <main class="main-content" id="feed">
+      <section class="welcome">
+        <p class="eyebrow">YOUR CAMPUS. YOUR COMMUNITY.</p>
+        <h1>Welcome to Campus Connect 👋</h1>
+        <p>A place to share what's happening around campus.</p>
+      </section>
+
+      <section class="composer" id="create">
+        <h2>Create a post</h2>
+        <form id="postForm">
+          <label for="postTitle">Post title</label>
+          <input id="postTitle" type="text" maxlength="100"
+            placeholder="What's on your mind?" required>
+
+          <label for="postContent">Your message</label>
+          <textarea id="postContent" maxlength="2000" rows="4"
+            placeholder="Share something with your campus..." required></textarea>
+
+          <button type="submit">Publish Post ↗</button>
+        </form>
+      </section>
+
+      <section class="feed-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">STAY IN THE LOOP</p>
+            <h2>Campus Feed</h2>
+          </div>
+          <span class="feed-label">Latest posts</span>
+        </div>
+        <div id="postsContainer">
+          <p>Loading posts...</p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="right-sidebar">
+      <section class="info-card" id="events">
+        <p class="eyebrow">WHAT'S HAPPENING</p>
+        <h2>Campus events</h2>
+        <div class="event">
+          <span class="event-icon">🎤</span>
+          <div><strong>Club Meetup</strong><p>Meet people and find your community.</p></div>
+        </div>
+        <div class="event">
+          <span class="event-icon">💻</span>
+          <div><strong>Tech & Innovation</strong><p>Share ideas and build something new.</p></div>
+        </div>
+      </section>
+
+      <section class="info-card tip-card">
+        <span class="tip-icon">✦</span>
+        <h3>A little campus tip</h3>
+        <p>Have an idea for an event? Share it with your fellow students.</p>
+      </section>
+    </aside>
+  </div>
+
+  <footer>Campus Connect · Built for students, by students.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
