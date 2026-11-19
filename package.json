@@ -1,21 +1,33 @@
+
 {
   "name": "campus-connect-trial2",
   "version": "1.0.0",
-  "description": "AI-Enabled Cloud-Based Campus Connect",
+  "description": "AI-Enabled Cloud-Based Campus Connect with QuickMeet",
   "main": "server.js",
+  "type": "commonjs",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node --watch server.js"
   },
-  "keywords": [],
+  "engines": {
+    "node": ">=22 <25"
+  },
+  "keywords": [
+    "campus-connect",
+    "quickmeet",
+    "mongodb",
+    "express",
+    "ai"
+  ],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "@huggingface/inference": "^4.13.33",
+    "connect-mongo": "^5.1.0",
     "dotenv": "^18.0.9",
     "express": "^5.3.0",
+    "express-rate-limit": "^8.7.5",
+    "express-session": "^1.19.0",
     "mongoose": "^9.11.4"
   }
 }

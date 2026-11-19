@@ -7,36 +7,46 @@ const postSchema = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
-      maxlength: 100
     },
+
     content: {
       type: String,
       required: true,
       trim: true,
-      maxlength: 2000
     },
+
     author: {
       type: String,
-      default: "Student"
+      default: "Student",
     },
-    likes: {
-      type: Number,
-      default: 0
-    },
+
     category: {
       type: String,
       enum: [
-        "Workshop",
-        "Placement",
         "Academics",
+        "Test & Exam",
+        "Placement",
+        "Workshop",
+        "Party",
+        "Concert",
+        "Cultural Event",
+        "Sports",
+        "Seminar",
+        "Competition",
+        "Announcement",
+        "General",
         "Event",
-        "General"
       ],
-      default: "General"
-    }
+      default: "General",
+    },
+
+    likes: {
+      type: Number,
+      default: 0,
+    },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 

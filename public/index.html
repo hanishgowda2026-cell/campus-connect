@@ -2,89 +2,1039 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Campus Connect</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="theme-color"
+    content="#09091b"
+  />
+
+  <meta
+    name="description"
+    content="Campus Connect — AI-powered campus updates and nearby student meetups."
+  />
+
+  <title>Campus Connect | AI Campus & QuickMeet</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script
+    src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"
+    defer
+  ></script>
 </head>
+
 <body>
-  <header class="topbar">
-    <a class="logo" href="/">Campus<span>Connect</span></a>
-    <input id="searchInput" type="search" placeholder="Search posts...">
-    <div class="profile">S</div>
+
+  <!-- =====================================
+       BACKGROUND EFFECTS
+  ====================================== -->
+
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+  <div class="background-grid"></div>
+
+  <!-- =====================================
+       NAVIGATION
+  ====================================== -->
+
+  <header class="site-header">
+    <nav class="navbar container">
+
+      <a class="brand" href="#home">
+        <span class="brand-icon">
+          <i data-lucide="graduation-cap"></i>
+        </span>
+
+        <span class="brand-text">
+          Campus<span>Connect</span>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#home" class="nav-link active" data-nav="home">
+          <i data-lucide="house"></i>
+          <span>Home</span>
+        </a>
+
+        <a href="#campus-feed" class="nav-link" data-nav="feed">
+          <i data-lucide="layout-grid"></i>
+          <span>Campus Feed</span>
+        </a>
+
+        <a
+          href="#quickmeet"
+          class="nav-link quickmeet-nav"
+          data-nav="quickmeet"
+        >
+          <i data-lucide="map-pin"></i>
+          <span>QuickMeet</span>
+        </a>
+      </div>
+
+      <div class="nav-actions">
+
+        <div id="guestActions" class="auth-nav-actions">
+          <button
+            id="openLoginBtn"
+            class="btn btn-outline btn-small"
+            type="button"
+          >
+            Login
+          </button>
+
+          <button
+            id="openRegisterBtn"
+            class="btn btn-primary btn-small"
+            type="button"
+          >
+            Join Campus
+          </button>
+        </div>
+
+        <div
+          id="userActions"
+          class="auth-nav-actions"
+          hidden
+        >
+          <span id="navUserName" class="nav-user-name"></span>
+
+          <button
+            id="logoutBtn"
+            class="btn btn-outline btn-small"
+            type="button"
+          >
+            Logout
+          </button>
+        </div>
+
+      </div>
+
+    </nav>
   </header>
 
-  <div class="layout">
-    <aside class="sidebar">
-      <h3>YOUR CAMPUS</h3>
-      <a class="active" href="#feed">🏠 Home Feed</a>
-      <a href="#create">✍️ Create Post</a>
-      <a href="#events">📅 Campus Events</a>
-      <div class="sidebar-note">
-        <h3>STUDENT COMMUNITY</h3>
-        <p>Share ideas, discover events and connect with your campus.</p>
+  <main>
+
+    <!-- =====================================
+         HERO SECTION
+    ====================================== -->
+
+    <section id="home" class="hero-section container">
+
+      <div class="hero-content">
+
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          AI-POWERED CAMPUS EXPERIENCE
+        </div>
+
+        <h1 class="hero-title">
+          Your Campus.
+          <br />
+          <span class="gradient-text">Your Community.</span>
+        </h1>
+
+        <p class="hero-description">
+          Discover campus updates, share your ideas,
+          and connect with students around you.
+          One platform for everything happening on campus.
+        </p>
+
+        <div class="hero-actions">
+
+          <a href="#campus-feed" class="btn btn-primary">
+            <i data-lucide="sparkles"></i>
+            Explore Campus Feed
+          </a>
+
+          <a href="#quickmeet" class="btn btn-outline">
+            <i data-lucide="map-pin"></i>
+            Explore QuickMeet
+          </a>
+
+        </div>
+
+        <div class="hero-features">
+
+          <span>
+            <i data-lucide="brain-circuit"></i>
+            AI Categories
+          </span>
+
+          <span>
+            <i data-lucide="radio"></i>
+            Campus Updates
+          </span>
+
+          <span>
+            <i data-lucide="users"></i>
+            Student Meetups
+          </span>
+
+        </div>
+
       </div>
-    </aside>
 
-    <main class="main-content" id="feed">
-      <section class="welcome">
-        <p class="eyebrow">YOUR CAMPUS. YOUR COMMUNITY.</p>
-        <h1>Welcome to Campus Connect 👋</h1>
-        <p>A place to share what's happening around campus.</p>
-      </section>
+      <div class="hero-visual">
 
-      <section class="composer" id="create">
-        <h2>Create a post</h2>
-        <form id="postForm">
-          <label for="postTitle">Post title</label>
-          <input id="postTitle" type="text" maxlength="100"
-            placeholder="What's on your mind?" required>
+        <div class="ai-orbit orbit-one"></div>
+        <div class="ai-orbit orbit-two"></div>
 
-          <label for="postContent">Your message</label>
-          <textarea id="postContent" maxlength="2000" rows="4"
-            placeholder="Share something with your campus..." required></textarea>
+        <div class="ai-core">
+          <i data-lucide="brain-circuit"></i>
+          <span>Campus AI</span>
+        </div>
 
-          <button type="submit">Publish Post ↗</button>
-        </form>
-      </section>
+        <div class="floating-icon float-one">
+          <i data-lucide="graduation-cap"></i>
+        </div>
 
-      <section class="feed-section">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">STAY IN THE LOOP</p>
-            <h2>Campus Feed</h2>
+        <div class="floating-icon float-two">
+          <i data-lucide="map-pin"></i>
+        </div>
+
+        <div class="floating-icon float-three">
+          <i data-lucide="message-circle"></i>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         CAMPUS DASHBOARD
+    ====================================== -->
+
+    <section class="dashboard-section container">
+
+      <div class="section-heading">
+        <div>
+          <span class="section-eyebrow">LIVE CAMPUS ACTIVITY</span>
+          <h2>Campus Dashboard</h2>
+          <p>See what's happening across your community.</p>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <div class="stat-icon purple">
+            <i data-lucide="file-text"></i>
           </div>
-          <span class="feed-label">Latest posts</span>
+          <h3 id="totalPosts">0</h3>
+          <p>Total Posts</p>
         </div>
-        <div id="postsContainer">
-          <p>Loading posts...</p>
-        </div>
-      </section>
-    </main>
 
-    <aside class="right-sidebar">
-      <section class="info-card" id="events">
-        <p class="eyebrow">WHAT'S HAPPENING</p>
-        <h2>Campus events</h2>
-        <div class="event">
-          <span class="event-icon">🎤</span>
-          <div><strong>Club Meetup</strong><p>Meet people and find your community.</p></div>
+        <div class="stat-card">
+          <div class="stat-icon cyan">
+            <i data-lucide="layers"></i>
+          </div>
+          <h3 id="totalCategories">13</h3>
+          <p>AI Categories</p>
         </div>
-        <div class="event">
-          <span class="event-icon">💻</span>
-          <div><strong>Tech & Innovation</strong><p>Share ideas and build something new.</p></div>
-        </div>
-      </section>
 
-      <section class="info-card tip-card">
-        <span class="tip-icon">✦</span>
-        <h3>A little campus tip</h3>
-        <p>Have an idea for an event? Share it with your fellow students.</p>
-      </section>
-    </aside>
+        <div class="stat-card">
+          <div class="stat-icon pink">
+            <i data-lucide="heart"></i>
+          </div>
+          <h3 id="totalLikes">0</h3>
+          <p>Total Likes</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon green">
+            <i data-lucide="activity"></i>
+          </div>
+          <h3 id="activeCategories">0</h3>
+          <p>Active Categories</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         AI CAMPUS FEED
+    ====================================== -->
+
+    <section id="campus-feed" class="feed-section container">
+
+      <div class="section-heading">
+        <div>
+          <span class="section-eyebrow">SMART CAMPUS FEED</span>
+          <h2>Discover & Share</h2>
+          <p>
+            Share campus news, events, sports, and ideas.
+            AI helps organize every post.
+          </p>
+        </div>
+      </div>
+
+      <div class="feed-layout">
+
+        <div class="feed-main">
+
+          <!-- CREATE POST -->
+
+          <div class="glass-card create-post-card">
+
+            <div class="card-heading">
+              <div class="card-heading-icon">
+                <i data-lucide="square-pen"></i>
+              </div>
+
+              <div>
+                <h3>Create a Campus Post</h3>
+                <p>Let AI find the right category.</p>
+              </div>
+            </div>
+
+            <form id="postForm">
+
+              <label for="postTitle">Post Title</label>
+
+              <input
+                type="text"
+                id="postTitle"
+                placeholder="What's happening on campus?"
+                maxlength="120"
+                required
+              />
+
+              <label for="postContent">Description</label>
+
+              <textarea
+                id="postContent"
+                placeholder="Share details with your campus..."
+                rows="5"
+                required
+              ></textarea>
+
+              <div class="post-form-footer">
+
+                <div
+                  id="aiAnalysisStatus"
+                  class="ai-analysis-status"
+                  aria-live="polite"
+                >
+                  <i data-lucide="brain-circuit"></i>
+                  AI category detection ready
+                </div>
+
+                <button
+                  id="publishButton"
+                  type="submit"
+                  class="btn btn-primary"
+                >
+                  <i data-lucide="send"></i>
+                  Publish Post
+                </button>
+
+              </div>
+
+            </form>
+
+          </div>
+
+          <!-- SEARCH AND FILTERS -->
+
+          <div class="feed-toolbar">
+
+            <div class="search-box">
+              <i data-lucide="search"></i>
+
+              <input
+                type="search"
+                id="searchInput"
+                placeholder="Search campus posts..."
+                autocomplete="off"
+              />
+
+              <button
+                id="clearSearchBtn"
+                type="button"
+                aria-label="Clear search"
+              >
+                <i data-lucide="x"></i>
+              </button>
+            </div>
+
+          </div>
+
+          <div
+            id="categoryFilters"
+            class="category-filters"
+            aria-label="Filter posts by category"
+          ></div>
+
+          <!-- POSTS -->
+
+          <div class="posts-heading">
+            <h3>
+              <i data-lucide="radio"></i>
+              Campus Feed
+            </h3>
+
+            <span class="live-indicator">
+              <span class="pulse-dot"></span>
+              LIVE
+            </span>
+          </div>
+
+          <div id="postsContainer" class="posts-container">
+            <div class="loading-state">
+              <i data-lucide="loader-circle"></i>
+              <p>Loading campus posts...</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+
+        <aside class="feed-sidebar">
+
+          <div class="glass-card sidebar-card">
+
+            <div class="sidebar-title">
+              <i data-lucide="trending-up"></i>
+              <h3>Trending Categories</h3>
+            </div>
+
+            <div id="trendingCategories">
+              <p>Loading trends...</p>
+            </div>
+
+          </div>
+
+          <div class="glass-card sidebar-card quickmeet-promo">
+
+            <div class="sidebar-title">
+              <i data-lucide="map-pin"></i>
+              <h3>QuickMeet</h3>
+            </div>
+
+            <p>
+              Find students nearby for coffee,
+              study sessions, sports, and more.
+            </p>
+
+            <a href="#quickmeet" class="btn btn-primary">
+              Explore Nearby
+              <i data-lucide="arrow-right"></i>
+            </a>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         QUICKMEET SECTION
+    ====================================== -->
+
+    <section id="quickmeet" class="quickmeet-section container">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="section-eyebrow">
+            GPS-POWERED CAMPUS CONNECTIONS
+          </span>
+
+          <h2>
+            <i data-lucide="map-pin"></i>
+            QuickMeet
+          </h2>
+
+          <p>
+            Discover nearby activities, meet new students,
+            and make spontaneous campus plans.
+          </p>
+        </div>
+
+        <button
+          id="openCreateMeetupBtn"
+          class="btn btn-primary"
+          type="button"
+        >
+          <i data-lucide="plus"></i>
+          Create Meetup
+        </button>
+
+      </div>
+
+      <!-- QUICKMEET CONTROLS -->
+
+      <div class="glass-card quickmeet-controls">
+
+        <div class="quickmeet-control-group">
+
+          <label for="meetupRadius">
+            <i data-lucide="radar"></i>
+            Search Radius
+          </label>
+
+          <select id="meetupRadius">
+            <option value="500">500 meters</option>
+            <option value="1000">1 kilometer</option>
+            <option value="2000" selected>2 kilometers</option>
+            <option value="5000">5 kilometers</option>
+          </select>
+
+        </div>
+
+        <div class="quickmeet-control-group">
+
+          <label for="meetupCategoryFilter">
+            <i data-lucide="filter"></i>
+            Category
+          </label>
+
+          <select id="meetupCategoryFilter">
+            <option value="">All Categories</option>
+            <option value="Coffee & Chat">Coffee & Chat</option>
+            <option value="Study Group">Study Group</option>
+            <option value="Sports">Sports</option>
+            <option value="Food & Hangout">Food & Hangout</option>
+            <option value="Gaming">Gaming</option>
+            <option value="Project Collaboration">
+              Project Collaboration
+            </option>
+            <option value="Campus Walk">Campus Walk</option>
+            <option value="Other">Other</option>
+          </select>
+
+        </div>
+
+        <div class="quickmeet-control-actions">
+
+          <button
+            id="findNearbyBtn"
+            class="btn btn-primary"
+            type="button"
+          >
+            <i data-lucide="locate-fixed"></i>
+            Find Nearby
+          </button>
+
+          <button
+            id="showAllMeetupsBtn"
+            class="btn btn-outline"
+            type="button"
+          >
+            <i data-lucide="globe"></i>
+            Show All
+          </button>
+
+        </div>
+
+      </div>
+
+      <p
+        id="locationStatus"
+        class="location-status"
+        role="status"
+        aria-live="polite"
+      >
+        <i data-lucide="shield-check"></i>
+        GPS is optional. Your live location is not
+        displayed to other students.
+      </p>
+
+      <!-- QUICKMEET TABS -->
+
+      <div class="quickmeet-tabs">
+
+        <button
+          id="discoverMeetupsTab"
+          class="quickmeet-tab active"
+          type="button"
+          aria-pressed="true"
+        >
+          <i data-lucide="compass"></i>
+          Discover Meetups
+        </button>
+
+        <button
+          id="myMeetupsTab"
+          class="quickmeet-tab"
+          type="button"
+          aria-pressed="false"
+        >
+          <i data-lucide="users"></i>
+          My Meetups
+        </button>
+
+      </div>
+
+      <!-- MEETUP CARDS -->
+
+      <div id="meetupsContainer" class="meetups-grid">
+
+        <div class="quickmeet-empty-state">
+          <i data-lucide="map-pin"></i>
+          <h3>Discover Your Campus Community</h3>
+          <p>
+            Click Find Nearby to discover student activities
+            around you, or Show All to browse upcoming meetups.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =====================================
+       LOGIN MODAL
+  ====================================== -->
+
+  <div
+    id="loginModal"
+    class="modal-overlay"
+    hidden
+  >
+    <div
+      class="modal-card auth-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="loginModalTitle"
+    >
+
+      <button
+        class="modal-close"
+        type="button"
+        data-close-modal="loginModal"
+        aria-label="Close login"
+      >
+        <i data-lucide="x"></i>
+      </button>
+
+      <div class="modal-heading">
+        <i data-lucide="log-in"></i>
+        <h2 id="loginModalTitle">Welcome Back</h2>
+        <p>Log in to connect with your campus.</p>
+      </div>
+
+      <form id="loginForm">
+
+        <label for="loginEmail">Email Address</label>
+
+        <input
+          id="loginEmail"
+          type="email"
+          placeholder="student@example.com"
+          autocomplete="email"
+          required
+        />
+
+        <label for="loginPassword">Password</label>
+
+        <input
+          id="loginPassword"
+          type="password"
+          placeholder="Enter your password"
+          autocomplete="current-password"
+          required
+        />
+
+        <button
+          id="loginSubmitBtn"
+          class="btn btn-primary btn-full"
+          type="submit"
+        >
+          Login
+        </button>
+
+      </form>
+
+      <p class="auth-switch">
+        New to Campus Connect?
+        <button
+          id="switchToRegisterBtn"
+          type="button"
+        >
+          Create an account
+        </button>
+      </p>
+
+    </div>
   </div>
 
-  <footer>Campus Connect · Built for students, by students.</footer>
-  <script src="script.js"></script>
+  <!-- =====================================
+       REGISTRATION MODAL
+  ====================================== -->
+
+  <div
+    id="registerModal"
+    class="modal-overlay"
+    hidden
+  >
+    <div
+      class="modal-card auth-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="registerModalTitle"
+    >
+
+      <button
+        class="modal-close"
+        type="button"
+        data-close-modal="registerModal"
+        aria-label="Close registration"
+      >
+        <i data-lucide="x"></i>
+      </button>
+
+      <div class="modal-heading">
+        <i data-lucide="user-plus"></i>
+        <h2 id="registerModalTitle">Join Campus Connect</h2>
+        <p>Create your student account.</p>
+      </div>
+
+      <form id="registerForm">
+
+        <label for="registerName">Full Name</label>
+        <input
+          id="registerName"
+          type="text"
+          placeholder="Your name"
+          minlength="2"
+          maxlength="60"
+          autocomplete="name"
+          required
+        />
+
+        <label for="registerEmail">Email Address</label>
+        <input
+          id="registerEmail"
+          type="email"
+          placeholder="student@example.com"
+          autocomplete="email"
+          required
+        />
+
+        <label for="registerCollege">College Name</label>
+        <input
+          id="registerCollege"
+          type="text"
+          placeholder="Your college name"
+          maxlength="120"
+          required
+        />
+
+        <label for="registerStudentId">
+          USN / Roll Number (Optional)
+        </label>
+        <input
+          id="registerStudentId"
+          type="text"
+          placeholder="Your USN or roll number"
+          maxlength="40"
+        />
+
+        <label for="registerPassword">Password</label>
+        <input
+          id="registerPassword"
+          type="password"
+          placeholder="At least 8 characters"
+          minlength="8"
+          maxlength="128"
+          autocomplete="new-password"
+          required
+        />
+
+        <button
+          id="registerSubmitBtn"
+          class="btn btn-primary btn-full"
+          type="submit"
+        >
+          Create Account
+        </button>
+
+      </form>
+
+      <p class="auth-switch">
+        Already have an account?
+        <button
+          id="switchToLoginBtn"
+          type="button"
+        >
+          Login
+        </button>
+      </p>
+
+    </div>
+  </div>
+
+  <!-- =====================================
+       CREATE MEETUP MODAL
+  ====================================== -->
+
+  <div
+    id="createMeetupModal"
+    class="modal-overlay"
+    hidden
+  >
+    <div
+      class="modal-card meetup-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="createMeetupModalTitle"
+    >
+
+      <button
+        class="modal-close"
+        type="button"
+        data-close-modal="createMeetupModal"
+        aria-label="Close create meetup"
+      >
+        <i data-lucide="x"></i>
+      </button>
+
+      <div class="modal-heading">
+        <i data-lucide="calendar-plus"></i>
+        <h2 id="createMeetupModalTitle">Create a QuickMeet</h2>
+        <p>Plan something fun with students nearby.</p>
+      </div>
+
+      <form id="createMeetupForm">
+
+        <label for="meetupTitle">Meetup Title</label>
+        <input
+          id="meetupTitle"
+          type="text"
+          placeholder="Coffee break after class"
+          minlength="3"
+          maxlength="100"
+          required
+        />
+
+        <label for="meetupDescription">Description</label>
+        <textarea
+          id="meetupDescription"
+          rows="3"
+          placeholder="What are you planning?"
+          minlength="3"
+          maxlength="500"
+          required
+        ></textarea>
+
+        <label for="meetupCategory">Category</label>
+        <select id="meetupCategory" required>
+          <option value="">Select category</option>
+          <option value="Coffee & Chat">Coffee & Chat</option>
+          <option value="Study Group">Study Group</option>
+          <option value="Sports">Sports</option>
+          <option value="Food & Hangout">Food & Hangout</option>
+          <option value="Gaming">Gaming</option>
+          <option value="Project Collaboration">
+            Project Collaboration
+          </option>
+          <option value="Campus Walk">Campus Walk</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="meetupMeetingPoint">
+          Public Campus Meeting Point
+        </label>
+        <input
+          id="meetupMeetingPoint"
+          type="text"
+          placeholder="Main Library Entrance"
+          minlength="3"
+          maxlength="120"
+          required
+        />
+
+        <p class="form-hint">
+          Choose a public campus location, not a
+          hostel room, home, or private address.
+        </p>
+
+        <div class="form-two-columns">
+
+          <div>
+            <label for="meetupLatitude">Latitude</label>
+            <input
+              id="meetupLatitude"
+              type="number"
+              min="-90"
+              max="90"
+              step="any"
+              placeholder="12.9716"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="meetupLongitude">Longitude</label>
+            <input
+              id="meetupLongitude"
+              type="number"
+              min="-180"
+              max="180"
+              step="any"
+              placeholder="77.5946"
+              required
+            />
+          </div>
+
+        </div>
+
+        <button
+          id="useLocationBtn"
+          class="btn btn-outline"
+          type="button"
+        >
+          <i data-lucide="locate-fixed"></i>
+          Use My Location as Starting Point
+        </button>
+
+        <p class="form-hint">
+          Only use this for a public meeting point.
+          Adjust the coordinates if you're currently
+          somewhere private.
+        </p>
+
+        <div class="form-two-columns">
+
+          <div>
+            <label for="meetupStartTime">Start Time</label>
+            <input
+              id="meetupStartTime"
+              type="datetime-local"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="meetupEndTime">End Time</label>
+            <input
+              id="meetupEndTime"
+              type="datetime-local"
+              required
+            />
+          </div>
+
+        </div>
+
+        <label for="meetupMaxParticipants">
+          Maximum Participants
+        </label>
+
+        <input
+          id="meetupMaxParticipants"
+          type="number"
+          min="2"
+          max="30"
+          value="5"
+          required
+        />
+
+        <button
+          id="createMeetupSubmitBtn"
+          class="btn btn-primary btn-full"
+          type="submit"
+        >
+          <i data-lucide="plus-circle"></i>
+          Create Meetup
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+  <!-- =====================================
+       JOIN REQUESTS MODAL
+  ====================================== -->
+
+  <div
+    id="requestsModal"
+    class="modal-overlay"
+    hidden
+  >
+    <div
+      class="modal-card meetup-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="requestsModalTitle"
+    >
+
+      <button
+        class="modal-close"
+        type="button"
+        data-close-modal="requestsModal"
+        aria-label="Close join requests"
+      >
+        <i data-lucide="x"></i>
+      </button>
+
+      <div class="modal-heading">
+        <i data-lucide="users"></i>
+        <h2 id="requestsModalTitle">Join Requests</h2>
+        <p>Review students requesting to join.</p>
+      </div>
+
+      <div id="joinRequestsContainer">
+        <p>Loading join requests...</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =====================================
+       TOAST NOTIFICATIONS
+  ====================================== -->
+
+  <div
+    id="toastContainer"
+    class="toast-container"
+    aria-live="polite"
+  ></div>
+
+  <!-- =====================================
+       FOOTER
+  ====================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-content">
+
+      <div class="footer-brand">
+        <i data-lucide="graduation-cap"></i>
+        <span>Campus Connect</span>
+      </div>
+
+      <p>
+        AI-powered campus connections.
+        Built for students.
+      </p>
+
+      <p class="footer-copyright">
+        © 2026 Campus Connect
+      </p>
+
+    </div>
+
+  </footer>
+
+  <!-- =====================================
+       JAVASCRIPT
+  ====================================== -->
+
+  <script type="module" src="script.js"></script>
+
 </body>
 </html>
